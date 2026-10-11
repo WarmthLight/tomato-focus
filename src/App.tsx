@@ -16,7 +16,7 @@ export default function App() {
   }, [fetchWeather])
 
   return (
-    <div className="mx-auto max-w-md md:max-w-2xl lg:max-w-5xl">
+    <div className="safe-top mx-auto max-w-md md:max-w-2xl lg:max-w-5xl">
       <ThemeOverlay />
       {tab === 'focus' && <FocusPage />}
       {tab === 'todo' && <TodoPage />}

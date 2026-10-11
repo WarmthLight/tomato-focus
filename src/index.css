@@ -30,6 +30,21 @@ body,
   background-attachment: fixed;
 }
 
+/* iPhone 灵动岛/刘海安全区 + 键盘弹出动态视口 */
+@supports (min-height: 100dvh) {
+  #root {
+    min-height: 100dvh;
+  }
+}
+
+/* safe-area 工具类 */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 /* 卡片：统一边框 + 内高光 + 柔阴影，替代纯平铺背景 */
 .card {
   border: 1px solid rgba(255, 255, 255, 0.045);

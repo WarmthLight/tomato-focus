@@ -17,7 +17,7 @@ export default function TabBar({ active, onChange }: TabBarProps) {
   const activeIndex = tabs.findIndex((t) => t.key === active)
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 lg:bottom-4 lg:pointer-events-none">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-bottom lg:bottom-4 lg:pointer-events-none">
       <div className="relative mx-auto flex max-w-md border-t border-white/[0.06] bg-ink-800/80 backdrop-blur-xl lg:pointer-events-auto lg:max-w-sm lg:rounded-2xl lg:border lg:border-white/[0.06] lg:shadow-2xl lg:shadow-black/40">
         {/* 滑动指示器 */}
         <div
