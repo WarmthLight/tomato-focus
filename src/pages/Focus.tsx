@@ -17,7 +17,7 @@ export default function FocusPage() {
   return (
     <div className="flex min-h-full flex-col px-5 pt-10 pb-28">
       {/* 顶部标题栏 */}
-      <div className="mb-2 flex w-full max-w-sm items-center justify-between md:max-w-full lg:max-w-full">
+      <div className="mb-2 flex w-full max-w-sm items-center justify-between mx-auto md:max-w-full lg:mx-0">
         <h1 className="flex items-center gap-2 text-xl font-semibold tracking-tight text-ink-100">
           <span className="h-2 w-2 rounded-full bg-tomato-500 shadow-[0_0_8px_rgba(255,90,79,0.6)]" />
           番茄专注
@@ -38,7 +38,7 @@ export default function FocusPage() {
       </div>
 
       {/* 桌面双栏：左计时器栈 / 右任务侧栏（移动端保持原顺序单列） */}
-      <div className="lg:grid lg:grid-cols-[1fr_340px] lg:gap-10 lg:items-start">
+      <div className="lg:grid lg:grid-cols-[1fr_340px] lg:gap-12 lg:items-start">
         {/* 左栏：计时器主区 */}
         <div className="flex flex-col items-center">
           {!hidden && (
@@ -52,19 +52,19 @@ export default function FocusPage() {
             {settings.longBreakInterval} 个番茄长休息
           </p>
 
-          <div className="mb-10">
+          {/* 计时器 */}
+          <div className="mb-8 lg:mb-10">
             <TimerDisplay />
           </div>
 
-          <div className="mb-8">
+          {/* 桌面端：模式切换 + 时长选择并排；移动端：垂直堆叠 */}
+          <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-center lg:justify-center lg:gap-6">
             <ModeSwitcher />
-          </div>
-
-          <div className="mb-8">
             <FocusDurationPicker />
           </div>
 
-          <div className="mb-8">
+          {/* 控制按钮 */}
+          <div className="mt-8 lg:mt-10">
             <TimerControls />
           </div>
         </div>

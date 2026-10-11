@@ -7,33 +7,33 @@ export default function TimerControls() {
   const isFocus = mode === 'focus'
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 lg:gap-6">
       <button
         onClick={reset}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-700 text-ink-300 transition-all hover:bg-ink-600 hover:text-ink-100 active:scale-90"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-700 text-ink-300 transition-all hover:bg-ink-600 hover:text-ink-100 active:scale-90 lg:h-14 lg:w-14"
         aria-label="重置"
       >
-        <RotateCcw size={20} />
+        <RotateCcw size={20} className="lg:h-5 lg:w-5" />
       </button>
 
       <button
         onClick={isRunning ? pause : start}
-        className={`flex h-16 w-16 items-center justify-center rounded-full text-white shadow-xl transition-transform active:scale-95 ${
+        className={`flex h-16 w-16 items-center justify-center rounded-full text-white shadow-xl transition-transform active:scale-95 lg:h-20 lg:w-20 ${
           isFocus
             ? 'bg-tomato-500 shadow-tomato-500/40 hover:bg-tomato-600'
             : 'bg-mint-500 shadow-mint-500/40 hover:bg-mint-400'
         }`}
         aria-label={isRunning ? '暂停' : '开始'}
       >
-        {isRunning ? <Pause size={28} fill="currentColor" /> : <Play size={28} fill="currentColor" className="ml-1" />}
+        {isRunning ? <Pause size={28} fill="currentColor" className="lg:h-8 lg:w-8" /> : <Play size={28} fill="currentColor" className="ml-1 lg:h-8 lg:w-8" />}
       </button>
 
       <button
         onClick={skip}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-700 text-ink-300 transition-all hover:bg-ink-600 hover:text-ink-100 active:scale-90"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-700 text-ink-300 transition-all hover:bg-ink-600 hover:text-ink-100 active:scale-90 lg:h-14 lg:w-14"
         aria-label="跳过"
       >
-        <SkipForward size={20} />
+        <SkipForward size={20} className="lg:h-5 lg:w-5" />
       </button>
     </div>
   )

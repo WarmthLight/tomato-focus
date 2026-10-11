@@ -35,12 +35,12 @@ export default function TimerDisplay() {
       {/* 径向辉光（替代生硬纯色圆） */}
       {isRunning && (
         <div
-          className="absolute h-80 w-80 rounded-full timer-glow animate-pulse-ring"
+          className="absolute h-80 w-80 rounded-full timer-glow animate-pulse-ring lg:h-96 lg:w-96"
           style={{ ['--glow-color' as string]: color, opacity: 0.5 }}
         />
       )}
 
-      <svg width="300" height="300" className="relative">
+      <svg viewBox="0 0 300 300" className="relative h-[300px] w-[300px] lg:h-[380px] lg:w-[380px]">
         {/* 刻度标记 */}
         {TICKS.map((t, i) => {
           const rad = (t.angle - 90) * (Math.PI / 180)
@@ -95,7 +95,7 @@ export default function TimerDisplay() {
           {MODE_LABELS[mode]}
         </span>
         <span
-          className="font-mono text-7xl font-bold tabular-nums leading-none"
+          className="font-mono text-6xl font-bold tabular-nums leading-none lg:text-7xl"
           style={{ color }}
         >
           {formatTime(secondsLeft)}
